@@ -231,7 +231,7 @@ std::expected<std::string, std::string> Esp32Camera::Explain(const std::string& 
         }
 
         bool ok = image_to_jpeg_cb(
-            jpeg_src_buf, jpeg_src_len, w, h, enc_fmt, 80,
+            jpeg_src_buf, jpeg_src_len, w, h, enc_fmt, 85,
             [](void* arg, size_t index, const void* data, size_t len) -> size_t {
                 auto jpeg_queue = static_cast<QueueHandle_t>(arg);
                 JpegChunk chunk = {.data = nullptr, .len = len};
